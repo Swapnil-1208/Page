@@ -1,10 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Page</title>
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine? 🐼💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffffff);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .bg-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: rgba(0, 0, 0, 0.05);
+      white-space: nowrap;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      margin-top: 60px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .panda {
+      font-size: 80px;
+      margin: 15px 0;
+    }
+
+    .meme {
+      background: #fff;
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+      font-size: 16px;
+      max-width: 90%;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      background: #ff1f66;
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: #ddd;
+      color: #333;
+      position: absolute;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello 👋</h1>
-  <p>This page is live on GitHub.</p>
+
+  <!-- Background College Text -->
+  <div class="bg-text">
+    Ajay Kumar Garg Engineering College • Ghaziabad • Love Story 💕
+  </div>
+
+  <div class="container">
+
+    <div class="panda">🐼💖🐼</div>
+
+    <h1>Hey My Love 💕</h1>
+    <h2>Husband of 2 Years • Boyfriend of 12 Years 😘</h2>
+
+    <div class="meme">
+      😂 After 12 Valentines (except the first one)...<br>
+      Still asking again like it’s Day 1!<br><br>
+      So here I am… 💌
+    </div>
+
+    <h1>Will You Be My Valentine? 💝</h1>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="sayYes()">YES 💖</button>
+      <button id="noBtn" onmouseover="moveNo()" onclick="nope()">NO 🙄</button>
+    </div>
+
+    <div class="footer">
+      Made with 🐼 + ❤️ + Forever Love
+    </div>
+
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    // Set initial position
+    let posX = 50;
+    let posY = 50;
+
+    noBtn.style.left = posX + "%";
+    noBtn.style.top = posY + "%";
+
+    function moveNo() {
+      // Random position
+      const x = Math.random() * 80 + 5;
+      const y = Math.random() * 60 + 20;
+
+      noBtn.style.left = x + "%";
+      noBtn.style.top = y + "%";
+    }
+
+    function nope() {
+      alert("❌ Invalid Choice!\nOnly YES is allowed 😘💖");
+      moveNo();
+    }
+
+    function sayYes() {
+      alert("🎉 YAYYYYY!!! 💖🐼\nYou are officially my Valentine Forever!\nI Love You ❤️❤️❤️");
+
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          background:linear-gradient(135deg,#ffb6c1,#fff);
+          font-family:Segoe UI;
+          text-align:center;
+        ">
+          <h1 style="font-size:50px;">💖🐼 YESSSSS!!! 🐼💖</h1>
+          <h2>You are mine. Always. Forever. 😘</h2>
+          <p style="font-size:20px;">Happy Valentine’s Day, My Love 💝</p>
+          <p>From your forever Panda 🐼❤️</p>
+        </div>
+      `;
+    }
+  </script>
+
 </body>
 </html>
